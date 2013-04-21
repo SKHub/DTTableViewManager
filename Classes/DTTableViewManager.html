@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.6 (build 789)" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -114,9 +114,15 @@
 	
 	<option value="//api/name/setCellMappingforClass:modelClass:">&nbsp;&nbsp;&nbsp;&nbsp;- setCellMappingforClass:modelClass:</option>
 	
-	<option value="//api/name/setObjectMappingDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- setObjectMappingDictionary:</option>
+	<option value="//api/name/setFooterMappingForNibName:footerClass:modelClass:">&nbsp;&nbsp;&nbsp;&nbsp;- setFooterMappingForNibName:footerClass:modelClass:</option>
+	
+	<option value="//api/name/setHeaderMappingForNibName:headerClass:modelClass:">&nbsp;&nbsp;&nbsp;&nbsp;- setHeaderMappingForNibName:headerClass:modelClass:</option>
+	
+	<option value="//api/name/setSectionFooterModels:">&nbsp;&nbsp;&nbsp;&nbsp;- setSectionFooterModels:</option>
 	
 	<option value="//api/name/setSectionFooterTitles:">&nbsp;&nbsp;&nbsp;&nbsp;- setSectionFooterTitles:</option>
+	
+	<option value="//api/name/setSectionHeaderModels:">&nbsp;&nbsp;&nbsp;&nbsp;- setSectionHeaderModels:</option>
 	
 	<option value="//api/name/setSectionHeaderTitles:">&nbsp;&nbsp;&nbsp;&nbsp;- setSectionHeaderTitles:</option>
 	
@@ -148,7 +154,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Search">Search</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Section titles">Section titles</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Section headers/footers">Section headers/footers</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Add table items">Add table items</a></span></li>
 	
@@ -246,9 +252,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCellMappingforClass:modelClass:">setCellMappingforClass:modelClass:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObjectMappingDictionary:">setObjectMappingDictionary:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFooterMappingForNibName:footerClass:modelClass:">setFooterMappingForNibName:footerClass:modelClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHeaderMappingForNibName:headerClass:modelClass:">setHeaderMappingForNibName:headerClass:modelClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSectionFooterModels:">setSectionFooterModels:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSectionFooterTitles:">setSectionFooterTitles:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSectionHeaderModels:">setSectionHeaderModels:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSectionHeaderTitles:">setSectionHeaderTitles:</a></span></li>
 	
@@ -325,9 +337,18 @@
 
 <p>Every action that is done to table items &ndash; add, delete, insert etc. is applied immediately. There&rsquo;s no need to manually reload data on your table view. Group insertion, addition or deletion is processed inside <code>UITableView</code> <code>beginUpdates</code> and <code>endUpdates</code> block.</p>
 
-<h2>Loading cells from XIB</h2>
+<h2>Loading cells from NIB</h2>
 
-<p><code>DTTableViewManager</code> internally uses <code>registerNib:forCellReuseIdentifier:</code> method for making this happen, which requires iOS 5.0 and higher to work. Use <a href="#//api/name/setCellMappingForNib:cellClass:modelClass:">setCellMappingForNib:cellClass:modelClass:</a> for mapping NIB to cell class and model.</p><div class="warning"><p><strong>Warning:</strong> Before executing <a href="#//api/name/setCellMappingForNib:cellClass:modelClass:">setCellMappingForNib:cellClass:modelClass:</a>, make sure that <a href="#//api/name/tableView">tableView</a> property is set and <a href="#//api/name/tableView">tableView</a> is created. Good spot to call <a href="#//api/name/setCellMappingForNib:cellClass:modelClass:">setCellMappingForNib:cellClass:modelClass:</a> is in viewDidLoad method.</p></div>
+<p><code>DTTableViewManager</code> internally uses <code>registerNib:forCellReuseIdentifier:</code> method for making this happen, which requires iOS 5.0 and higher to work. Use <a href="#//api/name/setCellMappingForNib:cellClass:modelClass:">setCellMappingForNib:cellClass:modelClass:</a> for mapping NIB to cell class and model.</p>
+
+<p>Discussion. Before executing <a href="#//api/name/setCellMappingForNib:cellClass:modelClass:">setCellMappingForNib:cellClass:modelClass:</a>, make sure that <a href="#//api/name/tableView">tableView</a> property is set and <a href="#//api/name/tableView">tableView</a> is created. Good spot to call <a href="#//api/name/setCellMappingForNib:cellClass:modelClass:">setCellMappingForNib:cellClass:modelClass:</a> is in viewDidLoad method.</p>
+
+<h2>Loading headers/footers from NIB</h2>
+
+<p>To register custom NIB for header/footer use methods <a href="#//api/name/setHeaderMappingForNibName:headerClass:modelClass:"><code>setHeaderMappingForNibName:headerClass:modelClass:</code></a> and <a href="#//api/name/setFooterMappingForNibName:footerClass:modelClass:"><code>setFooterMappingForNibName:footerClass:modelClass:</code></a> methods.
+For iOS 6 and higher, UITableView&rsquo;s <code>registerNib:forHeaderFooterViewReuseIdentifier:</code> will be used. For iOS 5, <code>DTTableViewManager</code> will use <code>loadFromNibName:bundle:</code> method.</p>
+
+<p>To set header/footer models on the  <a href="#//api/name/tableView">tableView</a>, use <code>setHeaderModels:</code> and <code>setFooterModels:</code> method.</p>
 					</div>
 					
 					
@@ -440,8 +461,8 @@
 						</ul>
 						
 						
-						<a title="Section titles" name="task_Section titles"></a>
-						<h3 class="subsubtitle task-title">Section titles</h3>
+						<a title="Section headers/footers" name="task_Section headers/footers"></a>
+						<h3 class="subsubtitle task-title">Section headers/footers</h3>
 
 						<ul class="task-list">
 							<li>
@@ -453,8 +474,22 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/setSectionHeaderModels:">&ndash;&nbsp;setSectionHeaderModels:</a></code>
+		<span class="tooltip"><p>Sets sections header models. Header model class should be previously registered with <a href="#//api/name/setHeaderMappingForNibName:headerClass:modelClass:"><code>setHeaderMappingForNibName:headerClass:modelClass:</code></a> method.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/setSectionFooterTitles:">&ndash;&nbsp;setSectionFooterTitles:</a></code>
 		<span class="tooltip"><p>Sets sections footer titles, using <code>footerTitles</code> array. Titles must be <code>NSString</code> type.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSectionFooterModels:">&ndash;&nbsp;setSectionFooterModels:</a></code>
+		<span class="tooltip"><p>Sets sections footer models. Footer model class should be previously registered with <code>setFooterMappingForNibName:headerClass:modelClass:</code> method.</p></span>
 	</span>
 	
 	
@@ -676,8 +711,15 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setObjectMappingDictionary:">&ndash;&nbsp;setObjectMappingDictionary:</a></code>
-		<span class="tooltip"><p>This method is used to set mapping from model class to custom cell class.</p></span>
+		<code><a href="#//api/name/setHeaderMappingForNibName:headerClass:modelClass:">&ndash;&nbsp;setHeaderMappingForNibName:headerClass:modelClass:</a></code>
+		<span class="tooltip"><p>Use this method to set mapping from model to custom header view with <code>nibName</code> name. <code>headerClass</code> object is called with <code>updateWithModel:</code> method to update presentation of header view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFooterMappingForNibName:footerClass:modelClass:">&ndash;&nbsp;setFooterMappingForNibName:footerClass:modelClass:</a></code>
+		<span class="tooltip"><p>Use this method to set mapping from model to custom footer view with <code>nibName</code> name. <code>footerClass</code> object is called with <code>updateWithModel:</code> method to update presentation of footer view.</p></span>
 	</span>
 	
 	
@@ -1683,7 +1725,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Insert table item to indexPath <code>indexPath</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> style.</p><div class="warning"><p><strong>Warning:</strong> Inserting item at index, that is not occupied, will throw an exception.</p></div>
+		<p>Insert table item to indexPath <code>indexPath</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> style.</p><div class="warning"><p><strong>Warning:</strong> Inserting item at index, that is not occupied, will not throw an exception, and won&rsquo;t do anything, except logging into console about failure</p></div>
 	</div>
 	
 	
@@ -1744,7 +1786,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Insert table item to indexPath <code>indexPath</code>. Table will be automatically updated using <code>animation</code> style.</p><div class="warning"><p><strong>Warning:</strong> Inserting item at index, that is not occupied, will throw an exception.</p></div>
+		<p>Insert table item to indexPath <code>indexPath</code>. Table will be automatically updated using <code>animation</code> style.</p><div class="warning"><p><strong>Warning:</strong> Inserting item at index, that is not occupied, will not throw an exception, and won&rsquo;t do anything, except logging into console about failure</p></div>
 	</div>
 	
 	
@@ -2467,18 +2509,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setObjectMappingDictionary:" title="setObjectMappingDictionary:"></a>
-	<h3 class="subsubtitle method-title">setObjectMappingDictionary:</h3>
+	<a name="//api/name/setFooterMappingForNibName:footerClass:modelClass:" title="setFooterMappingForNibName:footerClass:modelClass:"></a>
+	<h3 class="subsubtitle method-title">setFooterMappingForNibName:footerClass:modelClass:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>This method is used to set mapping from model class to custom cell class.</p>
+		<p>Use this method to set mapping from model to custom footer view with <code>nibName</code> name. <code>footerClass</code> object is called with <code>updateWithModel:</code> method to update presentation of footer view.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setObjectMappingDictionary:(NSDictionary *)<em>mapping</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setFooterMappingForNibName:(NSString *)<em>nibName</em> footerClass:(Class)<em>footerClass</em> modelClass:(Class)<em>modelClass</em></code></div>
 
     
 	
@@ -2486,10 +2528,18 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>mapping</em></dt>
-			<dd><p>Dictionary of mappings. Must contain NSStringFromClass(<model class>) as keys and NSStringFromClass(<cell class>) as values.</p>
-
-<p>@discussion This method can be called multiple times. All mappings are simply added, not replaced.</p></dd>
+			<dt><em>nibName</em></dt>
+			<dd><p>Name of custom XIB that is used to create a footer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>footerClass</em></dt>
+			<dd><p>Class of the footer you want to be created for model with modelClass.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>modelClass</em></dt>
+			<dd><p>Class of the model you want to be mapped to footerClass.</p></dd>
 		</dl>
 		
 	</div>
@@ -2502,7 +2552,121 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is used to set mapping from model class to custom cell class.</p><div class="warning"><p><strong>Warning:</strong> Using this method is not recommended unless you know what you are doing. It can be used to set multiple mappings with one call, however mistakes in calling this method can be devastating. It is better and cleaner way to set mappings one by one, in controllers that represent models you are mapping.</p></div>
+		<p>Use this method to set mapping from model to custom footer view with <code>nibName</code> name. <code>footerClass</code> object is called with <code>updateWithModel:</code> method to update presentation of footer view.</p><div class="warning"><p><strong>Warning:</strong> If you are building for iOS 5, use UIView subclass, for iOS 6 and higher you can use UITableViewHeaderFooterView with reuse capability. <code>DTTableViewManager</code> will automatically figure out which class is used.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHeaderMappingForNibName:headerClass:modelClass:" title="setHeaderMappingForNibName:headerClass:modelClass:"></a>
+	<h3 class="subsubtitle method-title">setHeaderMappingForNibName:headerClass:modelClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Use this method to set mapping from model to custom header view with <code>nibName</code> name. <code>headerClass</code> object is called with <code>updateWithModel:</code> method to update presentation of header view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setHeaderMappingForNibName:(NSString *)<em>nibName</em> headerClass:(Class)<em>headerClass</em> modelClass:(Class)<em>modelClass</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>nibName</em></dt>
+			<dd><p>Name of custom XIB that is used to create a header.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>headerClass</em></dt>
+			<dd><p>Class of the header you want to be created for model with modelClass.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>modelClass</em></dt>
+			<dd><p>Class of the model you want to be mapped to headerClass.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Use this method to set mapping from model to custom header view with <code>nibName</code> name. <code>headerClass</code> object is called with <code>updateWithModel:</code> method to update presentation of header view.</p><div class="warning"><p><strong>Warning:</strong> If you are building for iOS 5, use UIView subclass, for iOS 6 and higher you can use UITableViewHeaderFooterView with reuse capability. <code>DTTableViewManager</code> will automatically figure out which class is used.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSectionFooterModels:" title="setSectionFooterModels:"></a>
+	<h3 class="subsubtitle method-title">setSectionFooterModels:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets sections footer models. Footer model class should be previously registered with <code>setFooterMappingForNibName:headerClass:modelClass:</code> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSectionFooterModels:(NSArray *)<em>footerModels</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>footerModels</em></dt>
+			<dd><p>footer models for all sections of the table.</p>
+
+<p>@discussion This method is used to set footer models. <code>DTTableViewManager</code> will then load NIB, registered for footerClass and will call <code>updateWithModel:</code> method on each footer object. On iOS 5, view will be loaded using loadFromNibName:bundle: method. On iOS 6, if registered footer class subclassed from UITableViewHeaderFooterView, it&rsquo;ll use iOS6 <code>registerNib:forHeaderFooterViewReuseIdentifier:</code> method.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets sections footer models. Footer model class should be previously registered with <code>setFooterMappingForNibName:headerClass:modelClass:</code> method.</p>
 	</div>
 	
 	
@@ -2573,6 +2737,59 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/setSectionHeaderModels:" title="setSectionHeaderModels:"></a>
+	<h3 class="subsubtitle method-title">setSectionHeaderModels:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets sections header models. Header model class should be previously registered with <a href="#//api/name/setHeaderMappingForNibName:headerClass:modelClass:"><code>setHeaderMappingForNibName:headerClass:modelClass:</code></a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSectionHeaderModels:(NSArray *)<em>headerModels</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>headerModels</em></dt>
+			<dd><p>header models for all sections of the table.</p>
+
+<p>@discussion This method is used to set header models. <code>DTTableViewManager</code> will then load NIB, registered for headerClass and will call <code>updateWithModel:</code> method on each header object. On iOS 5, view will be loaded using loadFromNibName:bundle: method. On iOS 6, if registered header class subclassed from UITableViewHeaderFooterView, it&rsquo;ll use iOS6 <code>registerNib:forHeaderFooterViewReuseIdentifier:</code> method.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets sections header models. Header model class should be previously registered with <a href="#//api/name/setHeaderMappingForNibName:headerClass:modelClass:"><code>setHeaderMappingForNibName:headerClass:modelClass:</code></a> method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setSectionHeaderTitles:" title="setSectionHeaderTitles:"></a>
 	<h3 class="subsubtitle method-title">setSectionHeaderTitles:</h3>
 	
@@ -2595,7 +2812,7 @@
 			<dt><em>headerTitles</em></dt>
 			<dd><p>header titles for all sections of the table.</p>
 
-<p>@discussion These method is identical to implementing <code>tableView:titleForHeaderInSection:</code> datasource method. If you want to have custom section header view, use usual <code>UITableView</code> delegate methods.</p></dd>
+<p>@discussion This method is identical to implementing <code>tableView:titleForHeaderInSection:</code> datasource method. If you want to have custom section header view, use usual <code>UITableView</code> delegate methods.</p></dd>
 		</dl>
 		
 	</div>
@@ -2808,9 +3025,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 MLSDev. All rights reserved. (Last updated: 2012-12-21)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-04-21)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.6 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
 					</div>
 				</div>

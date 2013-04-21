@@ -1,18 +1,18 @@
 <?xml version="1.0" standalone="no"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
-    <id>http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom/20121221175737</id>
+    <id>http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom/20130421172456</id>
     <title type="text">DTTableViewManager Documentation</title>
-    <rights>Copyright © 2012 MLSDev. All rights reserved.</rights>
+    <rights>Copyright © 2013 MLSDev. All rights reserved.</rights>
     <link rel="self" href="http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom"></link>
     <docset:publisherName>MLSDev</docset:publisherName>
     <docset:publisherID>com.mlsdev.documentation</docset:publisherID>
-    <updated>2012-12-21T17:57:37+02:00</updated>
+    <updated>2013-04-21T17:24:56+03:00</updated>
     <entry>
-        <id>tag:denheadless.github.com,2012-12-21:com.mlsdev.DTTableViewManager/1.0.0</id>
+        <id>tag:denheadless.github.com,2013-04-21:com.mlsdev.DTTableViewManager/1.0.0</id>
         <title type="text">DTTableViewManager Documentation</title>
-        <updated>2012-12-21T17:57:37+02:00</updated>
+        <updated>2013-04-21T17:24:56+03:00</updated>
         <content type="text">DTTableViewManager Documentation (v1.0.0)</content>
-        <link rel="enclosure" type="application/octet-stream" href="http://denheadless.github.com/DTTableViewManager/com.mlsdev.DTTableViewManager-1.0.xar" length="69626"></link>
+        <link rel="enclosure" type="application/octet-stream" href="http://denheadless.github.com/DTTableViewController/DTTableViewManager.atom" length="77175"></link>
         <docset:identifier>com.mlsdev.DTTableViewManager</docset:identifier>
         <docset:version>1.0.0</docset:version>
         <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>

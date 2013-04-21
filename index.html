@@ -5,7 +5,7 @@
 		<title>DTTableViewManager Reference</title>
 		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.6 (build 789)" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -38,38 +38,143 @@
 
 <p>Powerful architecture for UITableView. The idea is to move all datasource methods to separate class, and add many helper methods to manage presentation of your data models.</p>
 
-<p>Warning &ndash; setup will sound complex, but once you use it at least once, you will see the benefits.</p>
+<h2>Why?</h2>
 
-<h2>Core features</h2>
+<p>But first off, why do we need this?</p>
+
+<p>Lets imagine view controller, that manages table view presentation on itself.</p>
+
+<p>!<img src="without.png"/></p>
+
+<p>Clearly, there are way to many connections, that your view controller needs to handle. And we only show table view stuff, however most likely your view controller is also doing other things, which will make this graph even more complicated.</p>
+
+<p>Solution for this &ndash; separate datasource from view controller. <a href="Classes/DTTableViewManager.html">DTTableViewManager</a> does just that. Here&rsquo;s how picture looks, when we use it:</p>
+
+<p>!<img src="with.png"/></p>
+
+<p>In the end, view controller is left with following stuff:</p>
 
 <ul>
-<li>Ability to manipulate models in the table view on the fly. No need to worry about datasource methods.</li>
-<li>Clean controller code</li>
-<li>Table view cells can be created from code, or from IB.</li>
-<li>You can make your controller a subclass of <a href="Classes/DTTableViewManager.html">DTTableViewManager</a>, or you can make it a property on your controller and subclass from whatever you need</li>
-<li>Any datasource/delegate method can be overridden in your controller</li>
+<li>Set mapping between data model class and cell class.</li>
+<li>Populate table view with data models</li>
 </ul>
 
 
-<h2>Changelog</h2>
+<p>When view controller manages insertion, deletion, or moves items, it always struggles to keep datasource and table view in sync. DTTableViewManager does this automatically. View controller handles data models &ndash; table view is automatically updated.</p>
 
-<p><a href="https://github.com/DenHeadless/DTTableViewManager/wiki/Changelog">Changelog</a></p>
+<p>Okay, enough talking, let&rsquo;s dive into code!</p>
+
+<h2>How?</h2>
+
+<p>Simplest way for view controller is to subclass DTTableViewManager (it&rsquo;s not required, you can make it a separate object).</p>
+
+<h4>Adding data models to the table view</h4>
+
+<h5>One item</h5>
+
+<pre><code>[self addTableItem:model];
+
+[self addTableItem:model withRowAnimation:UITableViewRowAnimationAutomatic;
+
+[self addTableItem:model toSection:0];
+</code></pre>
+
+<p>All methods above are just shortcuts to method:</p>
+
+<pre><code>[self addTableItem:model toSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
+</code></pre>
+
+<h5>Array of items</h5>
+
+<pre><code>[self addTableItems:@[model1,model2]];
+[self addTableItems:@[model1,model2] toSection:0];
+[self addTableItems:@[model1,model2] withRowAnimation:UITableViewRowAnimationAutomatic];
+</code></pre>
+
+<p>These methods are shortcuts to method:</p>
+
+<pre><code>[self addTableItems:@[model1,model2] toSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
+</code></pre>
+
+<h4>Mapping data models to cells</h4>
+
+<p>Creating cell in code:</p>
+
+<pre><code>[self setCellMapping:[Cell class] modelClass:[Model class]];
+</code></pre>
+
+<p>Custom XIB for cell:</p>
+
+<pre><code>[self setCellMappingForNib:@"nib" cellClass:[Cell class] modelCLass:[Model class]];
+</code></pre>
+
+<h4>Removing data models</h4>
+
+<pre><code>[self removeTableItem:model];
+[self removeTableItem:model withRowAnimation:UITableViewRowAnimationAutomatic];
+[self removeTableItems:@[model1,model2]];
+[self removeTableItems:@[model1,model2] withRowAnimation:UITableViewRowAnimationAutomatic];
+</code></pre>
+
+<h4>Replacing data models</h4>
+
+<pre><code>[self replaceTableItem:model1 withTableItem:model2];
+[self replaceTableItem:model1 withTableItem:model2 andRowAnimation:UITableViewRowAnimationAutomatic];
+</code></pre>
+
+<h4>Inserting data models</h4>
+
+<pre><code>[self insertTableItem:model toIndexPath:indexPath];
+[self insertTableItem:model toIndexPath:indexPath withRowAnimation:UITableViewRowAnimationAutomatic];
+</code></pre>
+
+<h2>What else do you have?</h2>
+
+<p>List is not full, for additional features like:</p>
+
+<ul>
+<li>Search for tableItem / tableItems, getting all items from one section etc.</li>
+<li>Section headers/footers titles and custom views</li>
+<li>Section manipulations (delete, reload, move)</li>
+</ul>
+
+
+<p>head on to documentation.</p>
+
+<h2>Notes on implementation</h2>
+
+<ul>
+<li>This approach requires every table view cell to have it&rsquo;s data model object.</li>
+<li>Every cell after creation gets called with method updateWithModel: and receives data model to represent. Every cell needs to conform to <a href="Protocols/DTTableViewModelTransfer.html">DTTableViewModelTransfer</a> protocol.</li>
+<li>You can make your controller a subclass of <a href="Classes/DTTableViewManager.html">DTTableViewManager</a>, or you can make it a property on your controller and subclass from whatever you need.</li>
+<li>Any datasource/delegate method can be overridden in your controller. In case you are making <a href="Classes/DTTableViewManager.html">DTTableViewManager</a> a property on your UIViewController, datasource methods will be trampolined to your controller.</li>
+</ul>
+
+
+<h2>Requirements</h2>
+
+<ul>
+<li>iOS 5.0</li>
+<li>ARC</li>
+</ul>
+
+
+<h2>Installation</h2>
+
+<p>Simplest option is to use <a href="http://www.cocoapods.org">CocoaPods</a>:</p>
+
+<pre><code>pod 'DTTableViewManager'
+</code></pre>
 
 <h2>Example</h2>
 
-<p>Example is available in Example folder.</p>
+<p>Example project is available in Example folder.</p>
 
 <h2>Documentation</h2>
 
 <p>You can view documentation <a href="http://denheadless.github.com/DTTableViewManager/">online</a> or you can install it locally using following atom link: <a href="http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom">http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom</a>.</p>
 
-<h2>Additional</h2>
-
-<p>Added support for ARC, <a href="Classes/DTCellFactory.html">DTCellFactory</a> now uses <a href="https://gist.github.com/1057420">GCDSingleton macro</a>. If you need non-ARC version, please refer to <a href="https://github.com/DenHeadless/DTTableViewManager/tree/0.0.5">0.0.5 version</a>.</p>
-
-<h2>Discussion</h2>
-
-<p>This approach intends to clean your view controller from massive amounts of repeatable datasource code. It helps to think about table view models instead of table view cells. Table view cells should be responsive for displaying their content, and controller should only be responsive for displaying models, not cells.</p>
+<p><a href="https://github.com/DenHeadless/DTTableViewManager/wiki/Changelog">Changelog</a></p>
 
 <h2>Thanks</h2>
 
@@ -107,6 +212,13 @@
 						</ul>
 						
 						
+						<h2 class="index-title">Category References</h2>
+						<ul>
+							
+							<li><a href="Categories/UIView+Loading.html">UIView(Loading)</a></li>
+							
+						</ul>
+						
 					</div>
 					
 				</div>
@@ -116,9 +228,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 MLSDev. All rights reserved. (Last updated: 2012-12-21)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-04-21)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.6 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
 	
 					</div>
