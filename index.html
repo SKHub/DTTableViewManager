@@ -36,7 +36,7 @@
 						
 						<h1><a href="Classes/DTTableViewManager.html">DTTableViewManager</a></h1>
 
-<p>Powerful architecture for UITableView. The idea is to move all datasource methods to separate class, and add many helper methods to manage presentation of your data models.</p>
+<p>Powerful architecture for UITableView controllers. The idea is to move all datasource methods to separate class, and add many helper methods to manage presentation of your data models.</p>
 
 <h2>Why?</h2>
 
@@ -44,18 +44,24 @@
 
 <p>Lets imagine view controller, that manages table view presentation on itself.</p>
 
-<p>!<img src="without.png"/></p>
+<p align="center" >
+  <img src="[https://github.com/DenHeadless/DTTableViewManager/raw/gh-pages/without.png](https://github.com/DenHeadless/DTTableViewManager/raw/gh-pages/without.png)" alt="without" title="without.png">
+</p>
+
 
 <p>Clearly, there are way to many connections, that your view controller needs to handle. And we only show table view stuff, however most likely your view controller is also doing other things, which will make this graph even more complicated.</p>
 
-<p>Solution for this &ndash; separate datasource from view controller. <a href="Classes/DTTableViewManager.html">DTTableViewManager</a> does just that. Here&rsquo;s how picture looks, when we use it:</p>
+<p>Solution for this &ndash; separate datasource from view controller. DTTableViewManager does just that. Here&rsquo;s how picture looks, when we use it:</p>
 
-<p>!<img src="with.png"/></p>
+<p align="center" >
+  <img src="[https://github.com/DenHeadless/DTTableViewManager/raw/gh-pages/with.png](https://github.com/DenHeadless/DTTableViewManager/raw/gh-pages/with.png)" alt="with" title="with.png">
+</p>
+
 
 <p>In the end, view controller is left with following stuff:</p>
 
 <ul>
-<li>Set mapping between data model class and cell class.</li>
+<li>Register mapping between data model class and cell class.</li>
 <li>Populate table view with data models</li>
 </ul>
 
@@ -66,7 +72,16 @@
 
 <h2>How?</h2>
 
-<p>Simplest way for view controller is to subclass DTTableViewManager (it&rsquo;s not required, you can make it a separate object).</p>
+<p>Simplest way for view controller is to subclass DTTableViewManager, set it&rsquo;s tableView property, delegate, datasource and off you go!</p>
+
+<h4>Mapping data models to cells</h4>
+
+<p>Registering cell mapping:</p>
+
+<pre><code>[self registerCellClass:[Cell class] forModelClass:[Model class]];
+</code></pre>
+
+<p>This will also register nib with &ldquo;Cell&rdquo; name, if it exists.</p>
 
 <h4>Adding data models to the table view</h4>
 
@@ -94,18 +109,6 @@
 <p>These methods are shortcuts to method:</p>
 
 <pre><code>[self addTableItems:@[model1,model2] toSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
-</code></pre>
-
-<h4>Mapping data models to cells</h4>
-
-<p>Creating cell in code:</p>
-
-<pre><code>[self setCellMapping:[Cell class] modelClass:[Model class]];
-</code></pre>
-
-<p>Custom XIB for cell:</p>
-
-<pre><code>[self setCellMappingForNib:@"nib" cellClass:[Cell class] modelCLass:[Model class]];
 </code></pre>
 
 <h4>Removing data models</h4>
@@ -145,9 +148,9 @@
 
 <ul>
 <li>This approach requires every table view cell to have it&rsquo;s data model object.</li>
-<li>Every cell after creation gets called with method updateWithModel: and receives data model to represent. Every cell needs to conform to <a href="Protocols/DTTableViewModelTransfer.html">DTTableViewModelTransfer</a> protocol.</li>
+<li>Every cell after creation gets called with method updateWithModel: and receives data model to represent.</li>
 <li>You can make your controller a subclass of <a href="Classes/DTTableViewManager.html">DTTableViewManager</a>, or you can make it a property on your controller and subclass from whatever you need.</li>
-<li>Any datasource/delegate method can be overridden in your controller. In case you are making <a href="Classes/DTTableViewManager.html">DTTableViewManager</a> a property on your UIViewController, datasource methods will be trampolined to your controller.</li>
+<li>Any datasource/delegate method can be overridden in your controller.</li>
 </ul>
 
 
@@ -172,13 +175,13 @@
 
 <h2>Documentation</h2>
 
-<p>You can view documentation <a href="http://denheadless.github.com/DTTableViewManager/">online</a> or you can install it locally using following atom link: <a href="http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom">http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom</a>.</p>
+<p>You can view documentation <a href="http://denheadless.github.com/DTTableViewManager/">online</a> or you can install it locally using following atom link: <a href="http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom">http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom</a>. And, of course, <a href="http://www.cocoadocs.org">cocoadocs</a> is also a great option!</p>
 
 <p><a href="https://github.com/DenHeadless/DTTableViewManager/wiki/Changelog">Changelog</a></p>
 
 <h2>Thanks</h2>
 
-<p>Special thanks to Alexey Belkevich (<a href="https://github.com/belkevich">https://github.com/belkevich)</a>) for providing initial implementation of CellFactory.</p>
+<p>Special thanks to <a href="https://github.com/belkevich">Alexey Belkevich</a> for providing initial implementation of CellFactory.</p>
 						
 						
 					</div>
@@ -192,6 +195,8 @@
 						<ul>
 							
 							<li><a href="Classes/DTCellFactory.html">DTCellFactory</a></li>
+							
+							<li><a href="Classes/DTTableViewCell.html">DTTableViewCell</a></li>
 							
 							<li><a href="Classes/DTTableViewManager.html">DTTableViewManager</a></li>
 							
@@ -228,7 +233,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-04-21)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-05-25)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

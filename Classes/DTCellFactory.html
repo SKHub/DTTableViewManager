@@ -32,24 +32,12 @@
 	
 	
 	
-	<option value="tasks">Tasks</option>
 	
 	
 	
 	
 	
 	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
-	
-	
-	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/setCellClassMapping:forModelClass:">&nbsp;&nbsp;&nbsp;&nbsp;- setCellClassMapping:forModelClass:</option>
 	
 	
 	
@@ -65,13 +53,6 @@
 
 
 
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing factory">Accessing factory</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Mapping">Mapping</a></span></li>
-	
-</ul></li>
 
 
 
@@ -79,19 +60,6 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCellClassMapping:forModelClass:">setCellClassMapping:forModelClass:</a></span></li>
-	
-</ul></li>
 
 
 			</ul>
@@ -130,49 +98,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p><code>DTCellFactory</code> is a singleton object that is used to create cells for your tableView.</p>
 
-<h2>Mapping</h2>
-
-<p>You should add mapping from model class to cell class, so that <code>DTCellFactory</code> could correctly create custom cells of the correct type, and pass them to <a href="../Classes/DTTableViewManager.html"><code>DTTableViewManager</code></a>. Use <a href="#//api/name/setCellClassMapping:forModelClass:"><code>setCellClassMapping:forModelClass:</code></a> for setting that connection.</p>
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
-						
-						
-						<a title="Accessing factory" name="task_Accessing factory"></a>
-						<h3 class="subsubtitle task-title">Accessing factory</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
-		<span class="tooltip"><p>Singleton object of <code>DTCellFactory</code></p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Mapping" name="task_Mapping"></a>
-						<h3 class="subsubtitle task-title">Mapping</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setCellClassMapping:forModelClass:">&ndash;&nbsp;setCellClassMapping:forModelClass:</a></code>
-		<span class="tooltip"><p>Designated mapping method.</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
+<p>You shouldn&rsquo;t call any of it&rsquo;s methods. Use <a href="../Classes/DTTableViewManager.html"><code>DTTableViewManager</code></a> API&rsquo;s.</p>
 					</div>
 					
 					
@@ -181,116 +107,11 @@
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
-	<h3 class="subsubtitle method-title">sharedInstance</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Singleton object of <code>DTCellFactory</code></p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (DTCellFactory *)sharedInstance</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Singleton object of <code>DTCellFactory</code></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DTCellFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/setCellClassMapping:forModelClass:" title="setCellClassMapping:forModelClass:"></a>
-	<h3 class="subsubtitle method-title">setCellClassMapping:forModelClass:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Designated mapping method.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)setCellClassMapping:(Class)<em>cellClass</em> forModelClass:(Class)<em>modelClass</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>cellClass</em></dt>
-			<dd><p>Class of the cell you want to be created for model with <code>modelClass</code>.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>modelClass</em></dt>
-			<dd><p>Class of the model you want to be mapped to <code>cellClass</code>.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Designated mapping method.</p><div class="warning"><p><strong>Warning:</strong> If you want to use custom XIB for creating cells, use <a href="../Classes/DTTableViewManager.html#//api/name/setCellMappingForNib:cellClass:modelClass:"><code>[DTTableViewManager setCellMappingForNib:cellClass:modelClass:]</code></a> instead.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DTCellFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
+					
+					
 					
 					
 				</div>
@@ -303,7 +124,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-04-21)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-05-25)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
