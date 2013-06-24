@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>DTTableViewCellCreation Protocol Reference</title>
+		<title>DTTableViewModelSearching Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">DTTableViewCellCreation Protocol Reference</h1>
+				<h1 class="hideInXcode">DTTableViewModelSearching Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -44,7 +44,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/createdCell:forTableView:forRowAtIndexPath:">&nbsp;&nbsp;&nbsp;&nbsp;- createdCell:forTableView:forRowAtIndexPath:</option>
+	<option value="//api/name/shouldShowInSearchResultsForSearchString:inScopeIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- shouldShowInSearchResultsForSearchString:inScopeIndex:</option>
 	
 	
 	
@@ -74,7 +74,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createdCell:forTableView:forRowAtIndexPath:">createdCell:forTableView:forRowAtIndexPath:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldShowInSearchResultsForSearchString:inScopeIndex:">shouldShowInSearchResultsForSearchString:inScopeIndex:</a></span></li>
 	
 </ul></li>
 
@@ -83,7 +83,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="DTTableViewCellCreation Protocol Reference" name="top"></a>
+				<a title="DTTableViewModelSearching Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -92,7 +92,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">DTTableViewCellCreation Protocol Reference</h1>
+						<h1 class="title title-header">DTTableViewModelSearching Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -100,7 +100,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">DTTableViewCellCreation.h</td>
+	<td class="specification-value">DTTableViewModelSearching.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,7 +110,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>DTTableViewCellCreation</code> protocol is used to pass created cell to your controller, so it can apply with additional customization, that cannot be specified in your <code>UITableViewCell</code> subclass. When you are using <a href="../Classes/DTTableViewManager.html"><code>DTTableViewManager</code></a> as a separate object, and your controller is a delegate, then method <code>tableView:cellForRowAtIndexPath:</code> won&rsquo;t be called on your controller, and you will need to use this protocol instead.</p><div class="warning"><p><strong>Warning:</strong> If controller is a subclass of <a href="../Classes/DTTableViewManager.html">DTTableViewManager</a>, this protocol is not needed. You can receive cell by calling <a href="../Classes/DTTableViewManager.html"><code>DTTableViewManager</code></a> <code>tableView:cellForRowAtIndexPath:</code> method in your <code>tableView:cellForRowAtIndexPath:</code> method.</p></div>
+						<p><code>DTTableViewModelSearching</code> protocol is used to search within UITableView models. If model does not implement methods of this protocol, <a href="../Classes/DTTableViewManager.html">DTTableViewManager</a> will not add model to search results. Methods of this protocol are invoked for every model every time search occurs.</p>
 					</div>
 					
 					
@@ -128,11 +128,11 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/createdCell:forTableView:forRowAtIndexPath:">&ndash;&nbsp;createdCell:forTableView:forRowAtIndexPath:</a></code>
-		<span class="tooltip"><p>Use this method, if you need to update cell from your controller. This method is equal to <code>tableView:cellForRowAtIndexPath:</code>, except that cell is already created and <code>updateWithModel:</code> method is already called on it.</p></span>
+		<code><a href="#//api/name/shouldShowInSearchResultsForSearchString:inScopeIndex:">&ndash;&nbsp;shouldShowInSearchResultsForSearchString:inScopeIndex:</a></code>
+		<span class="tooltip"><p>Use this method to filter models, that should show up, if search string is equal to searchString</p></span>
 	</span>
 	
-	
+	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
@@ -151,18 +151,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/createdCell:forTableView:forRowAtIndexPath:" title="createdCell:forTableView:forRowAtIndexPath:"></a>
-	<h3 class="subsubtitle method-title">createdCell:forTableView:forRowAtIndexPath:</h3>
+	<a name="//api/name/shouldShowInSearchResultsForSearchString:inScopeIndex:" title="shouldShowInSearchResultsForSearchString:inScopeIndex:"></a>
+	<h3 class="subsubtitle method-title">shouldShowInSearchResultsForSearchString:inScopeIndex:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Use this method, if you need to update cell from your controller. This method is equal to <code>tableView:cellForRowAtIndexPath:</code>, except that cell is already created and <code>updateWithModel:</code> method is already called on it.</p>
+		<p>Use this method to filter models, that should show up, if search string is equal to searchString</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)createdCell:(UITableViewCell *)<em>cell</em> forTableView:(UITableView *)<em>tableView</em> forRowAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)shouldShowInSearchResultsForSearchString:(NSString *)<em>searchString</em> inScopeIndex:(int)<em>scope</em></code></div>
 
     
 	
@@ -170,18 +170,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>cell</em></dt>
-			<dd><p>Custom cell object that was created to display your model.</p></dd>
+			<dt><em>searchString</em></dt>
+			<dd><p>search string</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>tableView</em></dt>
-			<dd><p>TableView for which this cell is created.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>indexPath</em></dt>
-			<dd><p>indexPath of the created cell.</p></dd>
+			<dt><em>scope</em></dt>
+			<dd><p>current search scope</p></dd>
 		</dl>
 		
 	</div>
@@ -194,7 +189,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Use this method, if you need to update cell from your controller. This method is equal to <code>tableView:cellForRowAtIndexPath:</code>, except that cell is already created and <code>updateWithModel:</code> method is already called on it.</p>
+		<p>Use this method to filter models, that should show up, if search string is equal to searchString</p>
 	</div>
 	
 	
@@ -205,7 +200,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DTTableViewCellCreation.h</code><br />
+		<code class="declared-in-ref">DTTableViewModelSearching.h</code><br />
 	</div>				
 	
 	
@@ -224,7 +219,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-06-25)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

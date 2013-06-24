@@ -34,13 +34,30 @@
 					<div class="section section-overview index-overview">
 						
 						
-						<h1><a href="Classes/DTTableViewManager.html">DTTableViewManager</a></h1>
+						<p>!<a href="https://travis-ci.org/DenHeadless/DTTableViewManager.png?branch=master,develop">Build Status</a></p>
+
+<p>!<a href="http://cocoapod-badges.herokuapp.com/p/DTTableViewManager/badge.png">CocoaPod platform</a></p>
+
+<p>!<a href="http://cocoapod-badges.herokuapp.com/v/DTTableViewManager/badge.png">CocoaPod version</a></p>
+
+<h1><a href="Classes/DTTableViewManager.html">DTTableViewManager</a></h1>
 
 <p>Powerful architecture for UITableView controllers. The idea is to move all datasource methods to separate class, and add many helper methods to manage presentation of your data models.</p>
 
-<h2>Why?</h2>
+<h2>Features</h2>
 
-<p>But first off, why do we need this?</p>
+<ul>
+<li>Simple handling of custom table view cells, headers and footers</li>
+<li>Super easy search</li>
+<li>Automatic datasource and interface synchronization</li>
+<li>Dramatic decrease of code amount needed for any UITableView implementation.</li>
+<li>Good unit test coverage</li>
+</ul>
+
+
+<p>The best way to understand, what we are trying to achieve here, is to take a look at example, provided in Example folder.</p>
+
+<h2>How?</h2>
 
 <p>Lets imagine view controller, that manages table view presentation on itself.</p>
 
@@ -66,79 +83,116 @@
 </ul>
 
 
-<p>When view controller manages insertion, deletion, or moves items, it always struggles to keep datasource and table view in sync. DTTableViewManager does this automatically. View controller handles data models &ndash; table view is automatically updated.</p>
+<p>Okay, enough talking, let&rsquo;s dive into code. Simplest way for view controller is to subclass <a href="Classes/DTTableViewManager.html">DTTableViewManager</a>, set it&rsquo;s tableView property, delegate, datasource and off you go!</p>
 
-<p>Okay, enough talking, let&rsquo;s dive into code!</p>
+<h2>Mapping</h2>
 
-<h2>How?</h2>
+<ul>
+<li>Cells</li>
+</ul>
 
-<p>Simplest way for view controller is to subclass DTTableViewManager, set it&rsquo;s tableView property, delegate, datasource and off you go!</p>
 
-<h4>Mapping data models to cells</h4>
+<p><code>objective-c
+[self registerCellClass:[Cell class] forModelClass:[Model class]];
+</code></p>
 
-<p>Registering cell mapping:</p>
+<ul>
+<li>Headers/Footers</li>
+</ul>
 
-<pre><code>[self registerCellClass:[Cell class] forModelClass:[Model class]];
-</code></pre>
 
-<p>This will also register nib with &ldquo;Cell&rdquo; name, if it exists.</p>
+<p><code>objective-c
+[self registerHeaderClass:[HeaderView class] forModelClass:[Model class]];
+[self registerFooterClass:[FooterView class] forModelClass:[Model class]];
+</code></p>
 
-<h4>Adding data models to the table view</h4>
+<p>This will also register nibs with &ldquo;Cell&rdquo;, &ldquo;HeaderView&rdquo; and &ldquo;FooterView&rdquo; name, if any of them exist.</p>
 
-<h5>One item</h5>
+<h2>Managing table items</h2>
 
-<pre><code>[self addTableItem:model];
+<h5>Adding one item</h5>
 
+<p><code>objective-c
+[self addTableItem:model];
 [self addTableItem:model withRowAnimation:UITableViewRowAnimationAutomatic;
-
 [self addTableItem:model toSection:0];
-</code></pre>
+</code></p>
 
 <p>All methods above are just shortcuts to method:</p>
 
-<pre><code>[self addTableItem:model toSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
-</code></pre>
+<p><code>objective-c
+[self addTableItem:model toSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
+</code></p>
 
-<h5>Array of items</h5>
+<h5>Adding array of items</h5>
 
-<pre><code>[self addTableItems:@[model1,model2]];
+<p><code>objective-c
+[self addTableItems:@[model1,model2]];
 [self addTableItems:@[model1,model2] toSection:0];
 [self addTableItems:@[model1,model2] withRowAnimation:UITableViewRowAnimationAutomatic];
-</code></pre>
+</code></p>
 
 <p>These methods are shortcuts to method:</p>
 
-<pre><code>[self addTableItems:@[model1,model2] toSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
-</code></pre>
+<p><code>objective-c
+[self addTableItems:@[model1,model2] toSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
+</code></p>
 
 <h4>Removing data models</h4>
 
-<pre><code>[self removeTableItem:model];
+<p><code>objective-c
+[self removeTableItem:model];
 [self removeTableItem:model withRowAnimation:UITableViewRowAnimationAutomatic];
 [self removeTableItems:@[model1,model2]];
 [self removeTableItems:@[model1,model2] withRowAnimation:UITableViewRowAnimationAutomatic];
-</code></pre>
+</code></p>
 
 <h4>Replacing data models</h4>
 
-<pre><code>[self replaceTableItem:model1 withTableItem:model2];
+<p><code>objective-c
+[self replaceTableItem:model1 withTableItem:model2];
 [self replaceTableItem:model1 withTableItem:model2 andRowAnimation:UITableViewRowAnimationAutomatic];
-</code></pre>
+</code></p>
 
 <h4>Inserting data models</h4>
 
-<pre><code>[self insertTableItem:model toIndexPath:indexPath];
+<p><code>objective-c
+[self insertTableItem:model toIndexPath:indexPath];
 [self insertTableItem:model toIndexPath:indexPath withRowAnimation:UITableViewRowAnimationAutomatic];
-</code></pre>
+</code></p>
+
+<h2>Awesome search!</h2>
+
+<p>There are two ways of using search. In both cases your data models should conform to <code>DTTableViewModelSearching</code> protocol. You need to implement method shouldShowInSearchResultsForSearchString:inScopeIndex: on your data model, this way <a href="Classes/DTTableViewManager.html">DTTableViewManager</a> will know, when to show data models.</p>
+
+<h4>Automatic</h4>
+
+<p>Set UISearchBar&rsquo;s delegate property to your <code>DTTableViewManager</code> subclass. That&rsquo;s it, you&rsquo;ve got search implemented!</p>
+
+<h4>Manual</h4>
+
+<p>Any time you need your models sorted, call method</p>
+
+<p><code>objective-c
+filterTableItemsForSearchString:
+</code></p>
+
+<p>Every data model in the table will be called with method</p>
+
+<p><code>objective-c
+shouldShowInSearchResultsForSearchString:inScopeIndex:
+</code></p>
+
+<p>and tableView will be automatically updated with results.</p>
 
 <h2>What else do you have?</h2>
 
 <p>List is not full, for additional features like:</p>
 
 <ul>
-<li>Search for tableItem / tableItems, getting all items from one section etc.</li>
 <li>Section headers/footers titles and custom views</li>
 <li>Section manipulations (delete, reload, move)</li>
+<li>Search for tableItem / tableItems, getting all items from one section etc.</li>
 </ul>
 
 
@@ -149,7 +203,6 @@
 <ul>
 <li>This approach requires every table view cell to have it&rsquo;s data model object.</li>
 <li>Every cell after creation gets called with method updateWithModel: and receives data model to represent.</li>
-<li>You can make your controller a subclass of <a href="Classes/DTTableViewManager.html">DTTableViewManager</a>, or you can make it a property on your controller and subclass from whatever you need.</li>
 <li>Any datasource/delegate method can be overridden in your controller.</li>
 </ul>
 
@@ -169,15 +222,18 @@
 <pre><code>pod 'DTTableViewManager'
 </code></pre>
 
-<h2>Example</h2>
-
-<p>Example project is available in Example folder.</p>
-
 <h2>Documentation</h2>
 
 <p>You can view documentation <a href="http://denheadless.github.com/DTTableViewManager/">online</a> or you can install it locally using following atom link: <a href="http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom">http://denheadless.github.com/DTTableViewManager/DTTableViewManager.atom</a>. And, of course, <a href="http://www.cocoadocs.org">cocoadocs</a> is also a great option!</p>
 
 <p><a href="https://github.com/DenHeadless/DTTableViewManager/wiki/Changelog">Changelog</a></p>
+
+<h2>Roadmap</h2>
+
+<ul>
+<li>NSFetchedResultsController and CoreData support</li>
+</ul>
+
 
 <h2>Thanks</h2>
 
@@ -210,7 +266,7 @@
 						<h2 class="index-title">Protocol References</h2>
 						<ul>
 							
-							<li><a href="Protocols/DTTableViewCellCreation.html">DTTableViewCellCreation</a></li>
+							<li><a href="Protocols/DTTableViewModelSearching.html">DTTableViewModelSearching</a></li>
 							
 							<li><a href="Protocols/DTTableViewModelTransfer.html">DTTableViewModelTransfer</a></li>
 							
@@ -233,7 +289,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-06-25)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

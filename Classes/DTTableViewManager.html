@@ -55,11 +55,6 @@
 	
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/managerWithDelegate:andTableView:">&nbsp;&nbsp;&nbsp;&nbsp;+ managerWithDelegate:andTableView:</option>
-	
-	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
@@ -86,11 +81,13 @@
 	
 	<option value="//api/name/deleteSections:withRowAnimation:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteSections:withRowAnimation:</option>
 	
+	<option value="//api/name/filterTableItemsForSearchString:">&nbsp;&nbsp;&nbsp;&nbsp;- filterTableItemsForSearchString:</option>
+	
+	<option value="//api/name/filterTableItemsForSearchString:inScope:">&nbsp;&nbsp;&nbsp;&nbsp;- filterTableItemsForSearchString:inScope:</option>
+	
 	<option value="//api/name/indexPathArrayForTableItems:">&nbsp;&nbsp;&nbsp;&nbsp;- indexPathArrayForTableItems:</option>
 	
 	<option value="//api/name/indexPathOfTableItem:">&nbsp;&nbsp;&nbsp;&nbsp;- indexPathOfTableItem:</option>
-	
-	<option value="//api/name/initWithDelegate:andTableView:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDelegate:andTableView:</option>
 	
 	<option value="//api/name/insertTableItem:toIndexPath:">&nbsp;&nbsp;&nbsp;&nbsp;- insertTableItem:toIndexPath:</option>
 	
@@ -98,9 +95,17 @@
 	
 	<option value="//api/name/moveSection:toSection:">&nbsp;&nbsp;&nbsp;&nbsp;- moveSection:toSection:</option>
 	
+	<option value="//api/name/numberOfOriginalSections">&nbsp;&nbsp;&nbsp;&nbsp;- numberOfOriginalSections</option>
+	
 	<option value="//api/name/numberOfSections">&nbsp;&nbsp;&nbsp;&nbsp;- numberOfSections</option>
 	
+	<option value="//api/name/numberOfTableItemsInOriginalSection:">&nbsp;&nbsp;&nbsp;&nbsp;- numberOfTableItemsInOriginalSection:</option>
+	
 	<option value="//api/name/numberOfTableItemsInSection:">&nbsp;&nbsp;&nbsp;&nbsp;- numberOfTableItemsInSection:</option>
+	
+	<option value="//api/name/originalIndexPathArrayOfTableItems:">&nbsp;&nbsp;&nbsp;&nbsp;- originalIndexPathArrayOfTableItems:</option>
+	
+	<option value="//api/name/originalIndexPathOfTableItem:">&nbsp;&nbsp;&nbsp;&nbsp;- originalIndexPathOfTableItem:</option>
 	
 	<option value="//api/name/registerCellClass:forModelClass:">&nbsp;&nbsp;&nbsp;&nbsp;- registerCellClass:forModelClass:</option>
 	
@@ -134,7 +139,9 @@
 	
 	<option value="//api/name/tableItemAtIndexPath:">&nbsp;&nbsp;&nbsp;&nbsp;- tableItemAtIndexPath:</option>
 	
-	<option value="//api/name/tableItemsArrayForIndexPaths:">&nbsp;&nbsp;&nbsp;&nbsp;- tableItemsArrayForIndexPaths:</option>
+	<option value="//api/name/tableItemAtOriginalIndexPath:">&nbsp;&nbsp;&nbsp;&nbsp;- tableItemAtOriginalIndexPath:</option>
+	
+	<option value="//api/name/tableItemsInOriginalSection:">&nbsp;&nbsp;&nbsp;&nbsp;- tableItemsInOriginalSection:</option>
 	
 	<option value="//api/name/tableItemsInSection:">&nbsp;&nbsp;&nbsp;&nbsp;- tableItemsInSection:</option>
 	
@@ -155,8 +162,6 @@
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialization">Initialization</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Mapping">Mapping</a></span></li>
 	
@@ -198,12 +203,6 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/managerWithDelegate:andTableView:">managerWithDelegate:andTableView:</a></span></li>
-	
-</ul></li>
-
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
@@ -230,11 +229,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteSections:withRowAnimation:">deleteSections:withRowAnimation:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/filterTableItemsForSearchString:">filterTableItemsForSearchString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/filterTableItemsForSearchString:inScope:">filterTableItemsForSearchString:inScope:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indexPathArrayForTableItems:">indexPathArrayForTableItems:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indexPathOfTableItem:">indexPathOfTableItem:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDelegate:andTableView:">initWithDelegate:andTableView:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertTableItem:toIndexPath:">insertTableItem:toIndexPath:</a></span></li>
 	
@@ -242,9 +243,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/moveSection:toSection:">moveSection:toSection:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfOriginalSections">numberOfOriginalSections</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfSections">numberOfSections</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfTableItemsInOriginalSection:">numberOfTableItemsInOriginalSection:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfTableItemsInSection:">numberOfTableItemsInSection:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/originalIndexPathArrayOfTableItems:">originalIndexPathArrayOfTableItems:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/originalIndexPathOfTableItem:">originalIndexPathOfTableItem:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerCellClass:forModelClass:">registerCellClass:forModelClass:</a></span></li>
 	
@@ -278,7 +287,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tableItemAtIndexPath:">tableItemAtIndexPath:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tableItemsArrayForIndexPaths:">tableItemsArrayForIndexPaths:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tableItemAtOriginalIndexPath:">tableItemAtOriginalIndexPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tableItemsInOriginalSection:">tableItemsInOriginalSection:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tableItemsInSection:">tableItemsInSection:</a></span></li>
 	
@@ -309,7 +320,7 @@
 	<td class="specification-value">UIViewController</td>
 </tr><tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">UITableViewDataSource<br />UITableViewDelegate</td>
+	<td class="specification-value">UISearchBarDelegate<br />UITableViewDataSource<br />UITableViewDelegate</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">DTTableViewManager.h</td>
@@ -329,31 +340,33 @@
 <h1>General steps</h1>
 
 <ul>
-<li>You should have custom <code>UITableViewCell</code> subclasses that manage cell layout, using given data model.</li>
+<li>You should have custom <code>UITableViewCell</code> subclasses that manage cell layout, using given data model (or <a href="../Classes/DTTableViewCell.html"><code>DTTableViewCell</code></a>, which is UITableViewCell subclass, that conforms to <a href="../Protocols/DTTableViewModelTransfer.html"><code>DTTableViewModelTransfer</code></a> protocol)</li>
 <li>Every cell class should be mapped to model class using mapping methods.</li>
-<li><code>UITableView</code> datasource should be set to DTTableViewManager object.</li>
+<li><code>UITableView</code> datasource and delegate is your <code>DTTableViewManager</code> subclass.</li>
 </ul>
 
 
-<h1>Subclassing</h1>
-
-<p>This is recommended and easier approach. In this case <code>UITableView</code> delegate and datasource is your controller. Any <code>UITableViewDatasource</code> and <code>UITableViewDelegate</code> method can be overridden in your controller.</p>
-
-<h1>Separate manager</h1>
-
-<p>This is needed, when your controller inherits from custom class, and you need to have <code>DTTableViewManager</code> as a separate object. In this case you should create <code>DTTableViewManager</code> object using <a href="#//api/name/managerWithDelegate:andTableView:">[DTTableViewManager managerWithDelegate:andTableView:]</a>, and make it a property in your controller. Current implementation sets <code>UITableView</code>&rsquo;s delegate and datasource property to <code>DTTableViewManager</code> object. Delegate methods are then trampolined to your controller if it implements them.</p>
-
-<p>There&rsquo;s a <a href="../Protocols/DTTableViewCellCreation.html"><code>DTTableViewCellCreation</code></a> protocol that can be used to modify cell after it has been created.</p>
-
 <h2>Managing table items</h2>
 
-<p>Every action that is done to table items &ndash; add, delete, insert etc. is applied immediately. There&rsquo;s no need to manually reload data on your table view. Group insertion, addition or deletion is processed inside <code>UITableView</code> <code>beginUpdates</code> and <code>endUpdates</code> block.</p>
+<p>Every action that is done to table items &ndash; add, delete, insert etc. is applied immediately. There&rsquo;s no need to manually reload data on your table view. Group insertion, addition or deletion is processed inside <code>UITableView</code> <code>beginUpdates</code> and <code>endUpdates</code> block. All methods for tableItems manipulation will automatically update both original <a href="#//api/name/tableView">tableView</a> and filtered <a href="#//api/name/tableView">tableView</a>, when search is active.</p>
 
 <h2>Mapping cells</h2>
 
 <p>Use <code>registerCellClass:forModelClass</code> for mapping cell class to model. &lsquo;DTTableViewManager&rsquo; will automatically check, if there&rsquo;s a nib with the same name as cellClass. If it is &ndash; this nib is registered for modelClass. If there&rsquo;s no nib &ndash; then cell will be created using initWithStyle: method on cellClass. If you need nib name for the cell to differ from cellClass name, use <code>registerNibName:forCellClass:modelClass:</code>.</p>
 
-<p>Before executing setCellMappingForNib:cellClass:modelClass:, make sure that <a href="#//api/name/tableView">tableView</a> property is set and <a href="#//api/name/tableView">tableView</a> is created. Good spot to call <code>registerCellClass:forModelClass</code> is in viewDidLoad method.</p>
+<p>Before executing mapping methods, make sure that <a href="#//api/name/tableView">tableView</a> property is set and <a href="#//api/name/tableView">tableView</a> is created. Good spot to call <code>registerCellClass:forModelClass</code> is in viewDidLoad method.</p>
+
+<h2>Search</h2>
+
+<p>Your data models should conform to <a href="../Protocols/DTTableViewModelSearching.html"><code>DTTableViewModelSearching</code></a> protocol. You need to implement method shouldShowInSearchResultsForSearchString:inScopeIndex: on your data model, this way DTTableViewManager will know, when to show data models.</p>
+
+<h1>Automatic</h1>
+
+<p>Set UISearchBar&rsquo;s delegate property to your <code>DTTableViewManager</code> subclass. That&rsquo;s it, you&rsquo;ve got search implemented!</p>
+
+<h1>Manual</h1>
+
+<p>Any time you need your models sorted, call method <a href="#//api/name/filterTableItemsForSearchString:">filterTableItemsForSearchString:</a>. Every data model in the table will be called with method shouldShowInSearchResultsForSearchString:inScopeIndex: and <a href="#//api/name/tableView">tableView</a> will be automatically updated with results.</p>
 
 <h2>Loading headers/footers from NIB</h2>
 
@@ -425,28 +438,6 @@
 						</ul>
 						
 						
-						<a title="Initialization" name="task_Initialization"></a>
-						<h3 class="subsubtitle task-title">Initialization</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithDelegate:andTableView:">&ndash;&nbsp;initWithDelegate:andTableView:</a></code>
-		<span class="tooltip"><p>Initializer for DTTableViewManager. Can be used when you are using it as a separate object.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/managerWithDelegate:andTableView:">+&nbsp;managerWithDelegate:andTableView:</a></code>
-		<span class="tooltip"><p>Returns autoreleased DTTableViewManager object. Can be used when you are using it as a separate object.</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
 						<a title="Mapping" name="task_Mapping"></a>
 						<h3 class="subsubtitle task-title">Mapping</h3>
 
@@ -503,50 +494,101 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/filterTableItemsForSearchString:">&ndash;&nbsp;filterTableItemsForSearchString:</a></code>
+		<span class="tooltip"><p>This method filters presented table items, using searchString as a criteria. All table items are queried with method <code>shouldShowInSearchResultsForSearchString:
+inScopeIndex:</code>. All models, which return YES to that method, will be displayed. This method is used, when you want to sort table items manually. If you want to do that automatically, simply set UISearchBarDelegate to your DTTableViewManager subclass and this method will get called automatically, when search bar text changes.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/filterTableItemsForSearchString:inScope:">&ndash;&nbsp;filterTableItemsForSearchString:inScope:</a></code>
+		<span class="tooltip"><p>This method filters presented table items, using searchString and scopeNumber as a criteria. All table items are queried with method <code>shouldShowInSearchResultsForSearchString:
+inScopeIndex:</code>. All models, which return YES to that method, will be displayed. This method is used, when you want to sort table items manually. If you want to do that automatically, simply set UISearchBarDelegate to your DTTableViewManager subclass and this method will get called automatically, when search bar text or scope changes.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/tableItemAtIndexPath:">&ndash;&nbsp;tableItemAtIndexPath:</a></code>
-		<span class="tooltip"><p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>.</p></span>
+		<span class="tooltip"><p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>. If this method is called when search is active, it will return model with indexPath in filtered table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tableItemAtOriginalIndexPath:">&ndash;&nbsp;tableItemAtOriginalIndexPath:</a></code>
+		<span class="tooltip"><p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>. This method always returns tableItem, using indexPath for original array, not depending on whether search is active or not.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/indexPathOfTableItem:">&ndash;&nbsp;indexPathOfTableItem:</a></code>
-		<span class="tooltip"><p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned</p></span>
+		<span class="tooltip"><p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned. If this method is called when search is active, it will return indexPath of the item in filtered table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/originalIndexPathOfTableItem:">&ndash;&nbsp;originalIndexPathOfTableItem:</a></code>
+		<span class="tooltip"><p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned. This method always returns indexPath for original array, not depending on whether search is active or not.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/indexPathArrayForTableItems:">&ndash;&nbsp;indexPathArrayForTableItems:</a></code>
-		<span class="tooltip"><p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths.</p></span>
+		<span class="tooltip"><p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths. If search is active, this method will return NSArray of indexPaths in filtered table.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/tableItemsArrayForIndexPaths:">&ndash;&nbsp;tableItemsArrayForIndexPaths:</a></code>
-		<span class="tooltip"><p>Returns array of table items at indexPaths.</p></span>
+		<code><a href="#//api/name/originalIndexPathArrayOfTableItems:">&ndash;&nbsp;originalIndexPathArrayOfTableItems:</a></code>
+		<span class="tooltip"><p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths. This method always returns indexPaths for original array, not depending on whether search is active or not.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/tableItemsInSection:">&ndash;&nbsp;tableItemsInSection:</a></code>
-		<span class="tooltip"><p>Returns array with table items in section</p></span>
+		<span class="tooltip"><p>Returns array with table items in section. If search is active, this method will return tableItems in filtered table. Section numbers may differ, since empty sections are not shown in search results.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tableItemsInOriginalSection:">&ndash;&nbsp;tableItemsInOriginalSection:</a></code>
+		<span class="tooltip"><p>Returns array with table items in section. Always returns original section, not depending on whether search is active or not.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/numberOfSections">&ndash;&nbsp;numberOfSections</a></code>
-		<span class="tooltip"><p>Returns number of sections, contained in <code>DTTableViewManager</code>.</p></span>
+		<span class="tooltip"><p>Returns number of sections, contained in <code>DTTableViewManager</code>. When search is active, will return number of sections in filtered table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberOfOriginalSections">&ndash;&nbsp;numberOfOriginalSections</a></code>
+		<span class="tooltip"><p>Returns number of sections, contained in <code>DTTableViewManager</code>. This method will return number of sections for original section, not depending on search results.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/numberOfTableItemsInSection:">&ndash;&nbsp;numberOfTableItemsInSection:</a></code>
-		<span class="tooltip"><p>Returns number of table items in a given <code>section</code>.</p></span>
+		<span class="tooltip"><p>Returns number of table items in a given <code>section</code>. When search is active, this method will return number of items in filtered table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberOfTableItemsInOriginalSection:">&ndash;&nbsp;numberOfTableItemsInOriginalSection:</a></code>
+		<span class="tooltip"><p>Returns number of table items in a given <code>section</code>. This method will use original table, not depending on whether search is active or not.</p></span>
 	</span>
 	
 	
@@ -561,28 +603,28 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addTableItem:">&ndash;&nbsp;addTableItem:</a></code>
-		<span class="tooltip"><p>Add tableItem to section 0. Table will be automatically updated with UITableViewRowAnimationNone.</p></span>
+		<span class="tooltip"><p>Add tableItem to section 0. Table will be automatically updated with <code>UITableViewRowAnimationNone</code> animation.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addTableItems:">&ndash;&nbsp;addTableItems:</a></code>
-		<span class="tooltip"><p>Add table items to section 0. Table will be automatically updated using UITableViewRowAnimationNone.</p></span>
+		<span class="tooltip"><p>Add table items to section 0. Table will be automatically updated using `UITableViewRowAnimationNone`` animation.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addTableItem:toSection:">&ndash;&nbsp;addTableItem:toSection:</a></code>
-		<span class="tooltip"><p>Add table items to section <code>section</code>. Table will be automatically updated using UITableViewRowAnimationNone.</p></span>
+		<span class="tooltip"><p>Add table items to section <code>section</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> animation.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addTableItems:toSection:">&ndash;&nbsp;addTableItems:toSection:</a></code>
-		<span class="tooltip"><p>Add table items to section <code>section</code>. Table will be automatically updated using UITableViewRowAnimationNone.</p></span>
+		<span class="tooltip"><p>Add table items to section <code>section</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> animation.</p></span>
 	</span>
 	
 	
@@ -1022,73 +1064,6 @@
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/managerWithDelegate:andTableView:" title="managerWithDelegate:andTableView:"></a>
-	<h3 class="subsubtitle method-title">managerWithDelegate:andTableView:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns autoreleased DTTableViewManager object. Can be used when you are using it as a separate object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)managerWithDelegate:(id&lt;UITableViewDelegate&gt;)<em>delegate</em> andTableView:(UITableView *)<em>tableView</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>Your controller, that wishes to get delegate and datasource calls from <code>DTTableViewmanager</code>.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>tableView</em></dt>
-			<dd><p><a href="#//api/name/tableView">tableView</a> on your controller you want to manager.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>autoreleased DTTableViewManager object</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns autoreleased DTTableViewManager object. Can be used when you are using it as a separate object.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DTTableViewManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
 					
 					
 					<div class="section section-methods">
@@ -1163,7 +1138,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Add tableItem to section 0. Table will be automatically updated with UITableViewRowAnimationNone.</p>
+		<p>Add tableItem to section 0. Table will be automatically updated with <code>UITableViewRowAnimationNone</code> animation.</p>
 	</div>		
 	
     
@@ -1190,7 +1165,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Add tableItem to section 0. Table will be automatically updated with UITableViewRowAnimationNone.</p>
+		<p>Add tableItem to section 0. Table will be automatically updated with <code>UITableViewRowAnimationNone</code> animation.</p>
 	</div>
 	
 	
@@ -1214,7 +1189,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Add table items to section <code>section</code>. Table will be automatically updated using UITableViewRowAnimationNone.</p>
+		<p>Add table items to section <code>section</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> animation.</p>
 	</div>		
 	
     
@@ -1246,7 +1221,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Add table items to section <code>section</code>. Table will be automatically updated using UITableViewRowAnimationNone.</p>
+		<p>Add table items to section <code>section</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> animation.</p>
 	</div>
 	
 	
@@ -1387,7 +1362,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Add table items to section 0. Table will be automatically updated using UITableViewRowAnimationNone.</p>
+		<p>Add table items to section 0. Table will be automatically updated using `UITableViewRowAnimationNone`` animation.</p>
 	</div>		
 	
     
@@ -1414,7 +1389,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Add table items to section 0. Table will be automatically updated using UITableViewRowAnimationNone.</p>
+		<p>Add table items to section 0. Table will be automatically updated using `UITableViewRowAnimationNone`` animation.</p>
 	</div>
 	
 	
@@ -1438,7 +1413,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Add table items to section <code>section</code>. Table will be automatically updated using UITableViewRowAnimationNone.</p>
+		<p>Add table items to section <code>section</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> animation.</p>
 	</div>		
 	
     
@@ -1470,7 +1445,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Add table items to section <code>section</code>. Table will be automatically updated using UITableViewRowAnimationNone.</p>
+		<p>Add table items to section <code>section</code>. Table will be automatically updated using <code>UITableViewRowAnimationNone</code> animation.</p>
 	</div>
 	
 	
@@ -1712,13 +1687,124 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/filterTableItemsForSearchString:" title="filterTableItemsForSearchString:"></a>
+	<h3 class="subsubtitle method-title">filterTableItemsForSearchString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method filters presented table items, using searchString as a criteria. All table items are queried with method <code>shouldShowInSearchResultsForSearchString:
+inScopeIndex:</code>. All models, which return YES to that method, will be displayed. This method is used, when you want to sort table items manually. If you want to do that automatically, simply set UISearchBarDelegate to your DTTableViewManager subclass and this method will get called automatically, when search bar text changes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)filterTableItemsForSearchString:(NSString *)<em>searchString</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>searchString</em></dt>
+			<dd><p>Search string used as a criteria for filtering.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method filters presented table items, using searchString as a criteria. All table items are queried with method <code>shouldShowInSearchResultsForSearchString:
+inScopeIndex:</code>. All models, which return YES to that method, will be displayed. This method is used, when you want to sort table items manually. If you want to do that automatically, simply set UISearchBarDelegate to your DTTableViewManager subclass and this method will get called automatically, when search bar text changes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/filterTableItemsForSearchString:inScope:" title="filterTableItemsForSearchString:inScope:"></a>
+	<h3 class="subsubtitle method-title">filterTableItemsForSearchString:inScope:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method filters presented table items, using searchString and scopeNumber as a criteria. All table items are queried with method <code>shouldShowInSearchResultsForSearchString:
+inScopeIndex:</code>. All models, which return YES to that method, will be displayed. This method is used, when you want to sort table items manually. If you want to do that automatically, simply set UISearchBarDelegate to your DTTableViewManager subclass and this method will get called automatically, when search bar text or scope changes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)filterTableItemsForSearchString:(NSString *)<em>searchString</em> inScope:(int)<em>scopeNumber</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>searchString</em></dt>
+			<dd><p>Search string used as a criteria for filtering.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scopeNumber</em></dt>
+			<dd><p>Scope number of UISearchBar</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method filters presented table items, using searchString and scopeNumber as a criteria. All table items are queried with method <code>shouldShowInSearchResultsForSearchString:
+inScopeIndex:</code>. All models, which return YES to that method, will be displayed. This method is used, when you want to sort table items manually. If you want to do that automatically, simply set UISearchBarDelegate to your DTTableViewManager subclass and this method will get called automatically, when search bar text or scope changes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/indexPathArrayForTableItems:" title="indexPathArrayForTableItems:"></a>
 	<h3 class="subsubtitle method-title">indexPathArrayForTableItems:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths.</p>
+		<p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths. If search is active, this method will return NSArray of indexPaths in filtered table.</p>
 	</div>		
 	
     
@@ -1752,7 +1838,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths.</p>
+		<p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths. If search is active, this method will return NSArray of indexPaths in filtered table.</p>
 	</div>
 	
 	
@@ -1776,7 +1862,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned</p>
+		<p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned. If this method is called when search is active, it will return indexPath of the item in filtered table.</p>
 	</div>		
 	
     
@@ -1799,7 +1885,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>indexPath of <code>tableItem</code>.If there are many equal tableItems, indexPath of the first one will be returned</p>
+		<p>indexPath of <code>tableItem</code>. If there are many equal tableItems, indexPath of the first one will be returned.</p>
 	</div>
 	
 	
@@ -1808,68 +1894,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DTTableViewManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithDelegate:andTableView:" title="initWithDelegate:andTableView:"></a>
-	<h3 class="subsubtitle method-title">initWithDelegate:andTableView:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializer for DTTableViewManager. Can be used when you are using it as a separate object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)initWithDelegate:(id&lt;UITableViewDelegate&gt;)<em>delegate</em> andTableView:(UITableView *)<em>tableView</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>Your controller, that wishes to get delegate and datasource calls from <code>DTTableViewManager</code>.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>tableView</em></dt>
-			<dd><p><a href="#//api/name/tableView">tableView</a> on your controller you want to manager.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>DTTableViewManager object</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Initializer for DTTableViewManager. Can be used when you are using it as a separate object.</p>
+		<p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned. If this method is called when search is active, it will return indexPath of the item in filtered table.</p>
 	</div>
 	
 	
@@ -2060,13 +2085,59 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/numberOfOriginalSections" title="numberOfOriginalSections"></a>
+	<h3 class="subsubtitle method-title">numberOfOriginalSections</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns number of sections, contained in <code>DTTableViewManager</code>. This method will return number of sections for original section, not depending on search results.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)numberOfOriginalSections</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>number of sections in <code>DTTableViewManager</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns number of sections, contained in <code>DTTableViewManager</code>. This method will return number of sections for original section, not depending on search results.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/numberOfSections" title="numberOfSections"></a>
 	<h3 class="subsubtitle method-title">numberOfSections</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns number of sections, contained in <code>DTTableViewManager</code>.</p>
+		<p>Returns number of sections, contained in <code>DTTableViewManager</code>. When search is active, will return number of sections in filtered table.</p>
 	</div>		
 	
     
@@ -2088,7 +2159,63 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns number of sections, contained in <code>DTTableViewManager</code>.</p>
+		<p>Returns number of sections, contained in <code>DTTableViewManager</code>. When search is active, will return number of sections in filtered table.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberOfTableItemsInOriginalSection:" title="numberOfTableItemsInOriginalSection:"></a>
+	<h3 class="subsubtitle method-title">numberOfTableItemsInOriginalSection:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns number of table items in a given <code>section</code>. This method will use original table, not depending on whether search is active or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)numberOfTableItemsInOriginalSection:(NSInteger)<em>section</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>section</em></dt>
+			<dd><p>section, which items will be counted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>number of table items in a given <code>section</code>. 0, if section does not exist</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns number of table items in a given <code>section</code>. This method will use original table, not depending on whether search is active or not.</p>
 	</div>
 	
 	
@@ -2112,7 +2239,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns number of table items in a given <code>section</code>.</p>
+		<p>Returns number of table items in a given <code>section</code>. When search is active, this method will return number of items in filtered table.</p>
 	</div>		
 	
     
@@ -2144,7 +2271,121 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns number of table items in a given <code>section</code>.</p>
+		<p>Returns number of table items in a given <code>section</code>. When search is active, this method will return number of items in filtered table.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/originalIndexPathArrayOfTableItems:" title="originalIndexPathArrayOfTableItems:"></a>
+	<h3 class="subsubtitle method-title">originalIndexPathArrayOfTableItems:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths. This method always returns indexPaths for original array, not depending on whether search is active or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)originalIndexPathArrayOfTableItems:(NSArray *)<em>tableItems</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tableItems</em></dt>
+			<dd><p>Array of tableItems, that need to be found.</p>
+
+<p>@discussion This method uses <a href="#//api/name/indexPathOfTableItem:"><code>indexPathOfTableItem:</code></a> internally. If table item is not found, it&rsquo;s skipped.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of tableItem&rsquo;s indexes, that were found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Searches for tableItems and returns <code>NSArray</code> of their indexPaths. This method always returns indexPaths for original array, not depending on whether search is active or not.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/originalIndexPathOfTableItem:" title="originalIndexPathOfTableItem:"></a>
+	<h3 class="subsubtitle method-title">originalIndexPathOfTableItem:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned. This method always returns indexPath for original array, not depending on whether search is active or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSIndexPath *)originalIndexPathOfTableItem:(NSObject *)<em>tableItem</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tableItem</em></dt>
+			<dd><p>Model of the item you wish to find.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>indexPath of <code>tableItem</code>. If there are many equal tableItems, indexPath of the first one will be returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Searches for tableItem and returns it&rsquo;s indexPath. If there are many equal tableItems, indexPath of the first one will be returned. This method always returns indexPath for original array, not depending on whether search is active or not.</p>
 	</div>
 	
 	
@@ -3005,7 +3246,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>.</p>
+		<p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>. If this method is called when search is active, it will return model with indexPath in filtered table.</p>
 	</div>		
 	
     
@@ -3037,7 +3278,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>.</p>
+		<p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>. If this method is called when search is active, it will return model with indexPath in filtered table.</p>
 	</div>
 	
 	
@@ -3055,18 +3296,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/tableItemsArrayForIndexPaths:" title="tableItemsArrayForIndexPaths:"></a>
-	<h3 class="subsubtitle method-title">tableItemsArrayForIndexPaths:</h3>
+	<a name="//api/name/tableItemAtOriginalIndexPath:" title="tableItemAtOriginalIndexPath:"></a>
+	<h3 class="subsubtitle method-title">tableItemAtOriginalIndexPath:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns array of table items at indexPaths.</p>
+		<p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>. This method always returns tableItem, using indexPath for original array, not depending on whether search is active or not.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSArray *)tableItemsArrayForIndexPaths:(NSArray *)<em>indexPaths</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)tableItemAtOriginalIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
 
     
 	
@@ -3074,10 +3315,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>indexPaths</em></dt>
-			<dd><p>indexPaths of array you want to find.</p>
-
-<p>@discussion if <code>indexPath</code> is not found, it is skipped. This method uses <a href="#//api/name/tableItemAtIndexPath:"><code>tableItemAtIndexPath:</code></a> internally.</p></dd>
+			<dt><em>indexPath</em></dt>
+			<dd><p>Index of the item you wish to retrieve.</p></dd>
 		</dl>
 		
 	</div>
@@ -3086,7 +3325,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>array of table items at indexPaths</p>
+		<p>model at indexPath. If section or row does not exist &ndash; <code>nil</code>.</p>
 	</div>
 	
 	
@@ -3095,7 +3334,63 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns array of table items at indexPaths.</p>
+		<p>If item exists at <code>indexPath</code>, it&rsquo;s model will be returned. If section or row does not exist, method will return <code>nil</code>. This method always returns tableItem, using indexPath for original array, not depending on whether search is active or not.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tableItemsInOriginalSection:" title="tableItemsInOriginalSection:"></a>
+	<h3 class="subsubtitle method-title">tableItemsInOriginalSection:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns array with table items in section. Always returns original section, not depending on whether search is active or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)tableItemsInOriginalSection:(int)<em>section</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>section</em></dt>
+			<dd><p>Number of the section in table.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>array of table items in section. Empty array if section does not exist.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns array with table items in section. Always returns original section, not depending on whether search is active or not.</p>
 	</div>
 	
 	
@@ -3119,7 +3414,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns array with table items in section</p>
+		<p>Returns array with table items in section. If search is active, this method will return tableItems in filtered table. Section numbers may differ, since empty sections are not shown in search results.</p>
 	</div>		
 	
     
@@ -3151,7 +3446,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns array with table items in section</p>
+		<p>Returns array with table items in section. If search is active, this method will return tableItems in filtered table. Section numbers may differ, since empty sections are not shown in search results.</p>
 	</div>
 	
 	
@@ -3181,7 +3476,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-05-25)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-06-25)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
