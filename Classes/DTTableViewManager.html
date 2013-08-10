@@ -40,8 +40,6 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/doNotReuseCells">&nbsp;&nbsp;&nbsp;&nbsp;doNotReuseCells</option>
-	
 	<option value="//api/name/sectionFooterModels">&nbsp;&nbsp;&nbsp;&nbsp;sectionFooterModels</option>
 	
 	<option value="//api/name/sectionFooterTitles">&nbsp;&nbsp;&nbsp;&nbsp;sectionFooterTitles</option>
@@ -53,6 +51,11 @@
 	<option value="//api/name/tableView">&nbsp;&nbsp;&nbsp;&nbsp;tableView</option>
 	
 	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/setLogging:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLogging:</option>
 	
 	
 	
@@ -187,8 +190,6 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doNotReuseCells">doNotReuseCells</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sectionFooterModels">sectionFooterModels</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sectionFooterTitles">sectionFooterTitles</a></span></li>
@@ -202,6 +203,12 @@
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLogging:">setLogging:</a></span></li>
+	
+</ul></li>
 
 
 
@@ -396,13 +403,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/tableView">&nbsp;&nbsp;tableView</a></code>
 		<span class="tooltip"><p>Table view that will present your data models.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/doNotReuseCells">&nbsp;&nbsp;doNotReuseCells</a></code>
-		<span class="tooltip"><p>Set this property to YES if you don&rsquo;t want to reuse cells.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -801,6 +801,13 @@ inScopeIndex:</code>. All models, which return YES to that method, will be displ
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLogging:">+&nbsp;setLogging:</a></code>
+		<span class="tooltip"><p>Method to enable/disable logging. Logging is on by default, and will print out any critical messages, that DTTableViewManager is encountering. Call this method, if you want to turn logging off. It is enough to call this method once, and this value will be used by all instances of DTTableViewManager.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -813,47 +820,6 @@ inScopeIndex:</code>. All models, which return YES to that method, will be displ
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/doNotReuseCells" title="doNotReuseCells"></a>
-	<h3 class="subsubtitle method-title">doNotReuseCells</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Set this property to YES if you don&rsquo;t want to reuse cells.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL doNotReuseCells</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Set this property to YES if you don&rsquo;t want to reuse cells.</p><div class="warning"><p><strong>Warning:</strong> By default, <code>reuseIdentifier</code> for cells is set to <code>NSStringFromClass(&lt;model class&gt;)</code></p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DTTableViewManager.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/sectionFooterModels" title="sectionFooterModels"></a>
@@ -1063,6 +1029,63 @@ inScopeIndex:</code>. All models, which return YES to that method, will be displ
 					</div>
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/setLogging:" title="setLogging:"></a>
+	<h3 class="subsubtitle method-title">setLogging:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method to enable/disable logging. Logging is on by default, and will print out any critical messages, that DTTableViewManager is encountering. Call this method, if you want to turn logging off. It is enough to call this method once, and this value will be used by all instances of DTTableViewManager.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setLogging:(BOOL)<em>isEnabled</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isEnabled</em></dt>
+			<dd><p>Flag, that indicates, whether logging is enabled.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method to enable/disable logging. Logging is on by default, and will print out any critical messages, that DTTableViewManager is encountering. Call this method, if you want to turn logging off. It is enough to call this method once, and this value will be used by all instances of DTTableViewManager.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DTTableViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -3476,7 +3499,7 @@ inScopeIndex:</code>. All models, which return YES to that method, will be displ
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-06-25)</span><br />
+						<p><span class="copyright">&copy; 2013 MLSDev. All rights reserved. (Last updated: 2013-08-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
